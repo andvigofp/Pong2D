@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class Ball : MonoBehaviour
 {
@@ -7,11 +6,20 @@ public class Ball : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private Rigidbody2D rb;
     public float speedIncrease = 0.1f;
+    private bool hasLaunched = false;
 
     private void Start()
     {
         startPos = transform.position;
-        Launch();
+    }
+
+   public void OnLanzarPelota()
+    {
+        if (!hasLaunched)
+        {
+            Launch();
+            hasLaunched = true;
+        }
     }
     public void Launch()
     {
@@ -20,13 +28,20 @@ public class Ball : MonoBehaviour
         rb.linearVelocity = new Vector2(x * speed, y * speed);
     }
 
+    public bool IsMoving()
+    {
+        return hasLaunched;
+    }
+
     public void Reset()
     {
         rb.linearVelocity = Vector2.zero;
-        transform.position = startPos;
-        Launch();
-    }
+        rb.angularVelocity = 0f;
 
+        transform.position = startPos;
+
+        hasLaunched = false;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))

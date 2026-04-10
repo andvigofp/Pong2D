@@ -7,46 +7,70 @@
             "id": "2b2fe951-d9a6-4029-8d40-679dc0ccd832",
             "actions": [
                 {
-                    "name": "Arriba",
-                    "type": "Button",
-                    "id": "313fc7cb-c9b8-4170-9965-721ae8afe7de",
-                    "expectedControlType": "",
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "3e20c214-6ebb-45f9-92f1-ef328eac874d",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Abajo",
-                    "type": "Button",
-                    "id": "410dc2b5-9ece-4569-8247-61a8b8360c52",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "51dc2900-59d4-41e1-b603-790f42b14400",
+                    "name": "2D Vector",
+                    "id": "189a1313-f417-4f5c-b320-0bbccc2874fe",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "dbafe2d5-5c1b-483f-a8fb-268c6bfba1cc",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Arriba",
+                    "action": "Move",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "59563e6c-db99-4b19-a3f4-91d3a9a634df",
+                    "name": "down",
+                    "id": "88cbd1c9-3889-4b9d-8cdf-fba7ade672e8",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Abajo",
+                    "action": "Move",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "4f4a1f19-788e-43fd-a48d-8c8752dc0aba",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "008c7137-57cf-4577-971e-1da320c82c6c",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },
@@ -55,7 +79,7 @@
             "id": "489fa4e2-fd3d-46ae-948d-87db4de0ab3e",
             "actions": [
                 {
-                    "name": "Pelota",
+                    "name": "LanzarPelota",
                     "type": "Button",
                     "id": "d34944ed-b94b-469e-b63c-a942a89f4def",
                     "expectedControlType": "",
@@ -72,7 +96,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Pelota",
+                    "action": "LanzarPelota",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
