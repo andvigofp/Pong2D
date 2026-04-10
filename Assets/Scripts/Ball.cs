@@ -44,11 +44,24 @@ public class Ball : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            rb.linearVelocity *= 1 + speedIncrease;
+            float diff = transform.position.y - collision.transform.position.y;
+
+        //Forzar mínimo vertical
+        if (Mathf.Abs(diff) < 0.2f)
+        {
+            diff = Random.Range(-0.5f, 0.5f);
         }
-       
+
+            float directionX = collision.transform.position.x < 0 ? 1 : -1;
+
+            Vector2 newDirection = new Vector2(directionX, diff).normalized;
+
+            rb.linearVelocity = newDirection * speed;
+
+            speed += speedIncrease;
+        }
     }
 }
 
